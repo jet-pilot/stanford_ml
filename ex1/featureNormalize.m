@@ -23,16 +23,14 @@ sigma = zeros(1, size(X, 2));
 %               to perform the normalization separately for 
 %               each feature. 
 %
+
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
 mu = mean(X)
 sigma = std(X)
-iter = size(X, 1)
 
-for i=1:iter
-	X_norm(i, :) = (X(i, :) - mu) ./ sigma
-
+X_norm = (X - repmat(mu, size(X, 1), 1)) ./ repmat(sigma, size(X, 1), 1);
 
 
 % ============================================================
