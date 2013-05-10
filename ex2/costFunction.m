@@ -24,6 +24,8 @@ sigm = sigmoid(X * theta)
 
 J = 1/m * sum(-y' * log(sigm) - (ones(size(y)) - y)' * log(ones(size(sigm)) - sigm))
 
+grad = 1/m * X' * (sigm - y)
+
 
 
 
