@@ -27,7 +27,7 @@ layer_one = X * Theta1';
 
 layer_one = [ones(m, 1) sigmoid(layer_one)];
 
-layer_two = layer_one * Theta2';
+layer_two = sigmoid(layer_one * Theta2');
 
 [dont_care, p] = max(layer_two, [], 2);
 
