@@ -62,8 +62,17 @@ Theta2_grad = zeros(size(Theta2));
 %               and Theta2_grad from Part 2.
 %
 
+X = [ones(m, 1) X];
 
+layer_one = X * Theta1';
 
+layer_one = [ones(m, 1) sigmoid(layer_one)];
+
+layer_two = sigmoid(layer_one * Theta2');
+
+Y  = eye(num_labels)(y,:)
+
+J = -sum(sum(Y .* log(layer_two) + (1-Y) .*log(1-layer_two))) / m;
 
 
 
