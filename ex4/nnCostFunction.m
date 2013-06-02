@@ -74,6 +74,7 @@ Y  = eye(num_labels)(y,:)
 
 J = -sum(sum(Y .* log(layer_two) + (1-Y) .*log(1-layer_two))) / m;
 
+J = J + lambda/(2*m) * (sum(sum(Theta1(:,2:end) .^2)) + sum(sum(Theta2(:,2:end) .^2)));
 
 
 
