@@ -17,9 +17,9 @@ g = zeros(size(z));
 
 
 
+sigm = sigmoid(z);
 
-
-
+g = sigm .* (ones(size(z)) - sigm);
 
 
 
