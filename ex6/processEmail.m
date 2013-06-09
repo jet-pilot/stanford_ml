@@ -12,6 +12,8 @@ vocabList = getVocabList();
 % Init return value
 word_indices = [];
 
+m = size(vocabList);
+
 % ========================== Preprocess Email ===========================
 
 % Find the Headers ( \n\n and remove )
@@ -97,10 +99,12 @@ while ~isempty(email_contents)
     %       str2). It will return 1 only if the two strings are equivalent.
     %
 
-
-
-
-
+	for i =1:m
+		if (strcmp(str, vocabList{i}) == 1)
+			word_indices = [word_indices ; i];
+		endif
+	endfor
+	
 
 
 
