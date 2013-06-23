@@ -54,6 +54,8 @@ for j = 1:u
 	Theta_grad(j, :) = X' * D(:, j);
 endfor
 
+J = J + (lambda/2*sum(sum(Theta(:).^2))) + (lambda/2*sum(sum(X(:).^2)));
+
 % =============================================================
 
 grad = [X_grad(:); Theta_grad(:)];
