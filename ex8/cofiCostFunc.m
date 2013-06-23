@@ -56,6 +56,9 @@ endfor
 
 J = J + (lambda/2*sum(sum(Theta(:).^2))) + (lambda/2*sum(sum(X(:).^2)));
 
+X_grad += lambda * X;
+Theta_grad += lambda * Theta;
+
 % =============================================================
 
 grad = [X_grad(:); Theta_grad(:)];
