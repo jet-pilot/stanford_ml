@@ -22,7 +22,15 @@ sigma2 = zeros(n, 1);
 %
 
 
+mu = [1/m .* sum(X)]'
 
+for i = 1:n
+	for j = 1:m
+		sigma2(i, 1) += (X(j, i) - mu(i, 1)) ^2;
+	endfor
+endfor
+
+sigma2 = sigma2./m
 
 
 
